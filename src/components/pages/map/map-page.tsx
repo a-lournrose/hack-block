@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import Map from 'ol/Map';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
 import View from 'ol/View';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
@@ -14,8 +12,7 @@ import XYZ from 'ol/source/XYZ';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import VectorLayer from 'ol/layer/Vector';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
+
 import VectorSource from 'ol/source/Vector';
 
 export const MapPage = () => {
