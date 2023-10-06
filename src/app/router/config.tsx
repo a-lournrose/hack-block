@@ -10,6 +10,7 @@ import { ThemePage } from '@components/pages/theme/theme-page';
 import { GradePage } from '@components/pages/grade';
 import GradeIdPage from '@components/pages/grade/grade-id-page';
 import { MapPage } from '@/components/pages/map-page';
+import { IndividualLessonPage } from '@components/pages/individual-lesson/individual-lesson-page';
 
 export type RoutePropsType = RouteProps & {
   isPrivate: boolean;
@@ -21,13 +22,7 @@ export const RoutePaths = {
   [RouteKeys.HOME]: '/',
   [RouteKeys.SUBSCRIPTIONS]: '/subscriptions',
   [RouteKeys.LATEST]: '/latest',
-  [RouteKeys.COMPANY]: '/company',
   [RouteKeys.COMPANY_ID]: '/company/:id',
-  [RouteKeys.VACANCY]: '/vacancy',
-  [RouteKeys.VACANCY_ID]: '/vacancy/:id',
-  [RouteKeys.USER]: '/user',
-  [RouteKeys.USER_ID]: '/user/:id',
-  [RouteKeys.ARTICLE_ID]: '/article/:id',
   [RouteKeys.WRITE]: '/write',
   [RouteKeys.MAP]: '/map',
   [RouteKeys.COURSE_ID]: '/course/:id',
@@ -64,7 +59,7 @@ export const routerConfig: RoutePropsType[] = [
   {
     isPrivate: true,
     path: RoutePaths[RouteKeys.LESSON_ID],
-    element: <div>dasdasdasd</div>,
+    element: <IndividualLessonPage />,
   },
   {
     isPrivate: true,
@@ -122,4 +117,3 @@ export const routerConfig: RoutePropsType[] = [
     element: <WritePage />,
   },
 ];
-
