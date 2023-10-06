@@ -23,7 +23,7 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
     rollupOptions: {
-      external: 'ol/Map',
+      external: ['ol/Map'],
     },
   },
 });
