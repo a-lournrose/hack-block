@@ -5,11 +5,9 @@ import { RouteKeys } from '@lib/constants';
 import { WritePage } from '@components/pages/write';
 import { HomePage } from '@components/pages/home/home-page';
 import { LatestPage } from '@components/pages/latest';
-import { MapPage } from '@components/pages/map';
 import { CoursePage } from '@components/pages/course/course-page';
 import { ThemePage } from '@components/pages/theme/theme-page';
 import { GradePage } from '@components/pages/grade';
-import { DrawPage } from '@components/pages/draw';
 import GradeIdPage from '@components/pages/grade/grade-id-page';
 
 export type RoutePropsType = RouteProps & {
@@ -71,16 +69,6 @@ export const routerConfig: RoutePropsType[] = [
     isPrivate: true,
     path: RoutePaths[RouteKeys.GRADE_ID],
     element: <GradeIdPage />,
-  },
-  {
-    isPrivate: true,
-    path: RoutePaths[RouteKeys.MAP],
-    element: <MapPage />,
-  },
-  {
-    isPrivate: false,
-    path: RoutePaths[RouteKeys.DRAW],
-    element: <DrawPage />,
   },
   {
     isPrivate: true,
