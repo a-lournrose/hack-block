@@ -1,0 +1,22 @@
+export enum RouteKeys {
+  HOME,
+  SUBSCRIPTIONS,
+  LATEST,
+  COMPANY,
+  COMPANY_ID,
+  COURSE_ID,
+  THEME_ID,
+  LESSON_ID,
+  ARTICLE_ID,
+  VACANCY,
+  VACANCY_ID,
+  USER,
+  USER_ID,
+  WRITE,
+  MAP,
+  AUTH,
+  AUTH_TEACHER,
+  GRADE,
+  GRADE_ID,
+  DRAW
+}
