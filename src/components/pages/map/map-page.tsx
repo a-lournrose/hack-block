@@ -1,22 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-import Map from 'ol/Map';
+import Map from 'ol/map';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-import View from 'ol/View';
+import View from 'ol/view';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-import TileLayer from 'ol/layer/Tile';
+import TileLayer from 'ol/layer/tile';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-import XYZ from 'ol/source/XYZ';
+import XYZ from 'ol/source/xyz';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-import VectorLayer from 'ol/layer/Vector';
+import VectorLayer from 'ol/layer/vector';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-import VectorSource from 'ol/source/Vector';
+import VectorSource from 'ol/source/vector';
 
 export const MapPage = () => {
   const [map, setMap] = useState(undefined);
