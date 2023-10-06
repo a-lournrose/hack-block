@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-import Map from 'ol/map';
+import Map from 'ol/Map';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-import View from 'ol/view';
+import View from 'ol/View';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import TileLayer from 'ol/layer/Tile';
