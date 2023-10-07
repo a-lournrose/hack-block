@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { LessonContainer } from '@components/shared/lesson-container/lesson-container';
 import { Button } from '@components/ui/button';
@@ -13,6 +13,8 @@ interface IIndividualLessonProps {}
 export const IndividualLessonPage = (props: IIndividualLessonProps) => {
   const { id } = useParams<{ id: string }>();
 
+  const [tab, setTab] = useState<TabKeysType>('article');
+
   // <ExaminationConstructor
   // //defaultValue={{}}
   // //ref={examinationRef as Ref<IExaminationConstructorForwardRef>}
@@ -22,7 +24,7 @@ export const IndividualLessonPage = (props: IIndividualLessonProps) => {
   return (
     <div className="flex flex-col w-full gap-4">
       <h1 className="head-text text-center">{`Урок №${id}.`}</h1>
-      <Tabs defaultValue="article">
+      <Tabs value={tab} onValueChange={(value: TabKeysType) => setTab(value)}>
         <div className="w-full flex justify-center">
           <TabsList>
             <TabsTrigger value="article">Теория</TabsTrigger>
@@ -52,7 +54,7 @@ export const IndividualLessonPage = (props: IIndividualLessonProps) => {
                 src="https://sun9-17.userapi.com/impg/vnhm2YTykB-jHr04byKnUPg0OqoqVPeR8ppIFA/eb2gUNUwxQI.jpg?size=604x340&quality=96&sign=04942f7640796f6e37d2b5bc90dac048&type=album"
                 alt="image"
               />
-              <span>Рисунок 1 — Земная кора</span>
+              <span className="text-desc">Рисунок 1 — Земная кора</span>
               <p>
                 Континентальная (материковая) кора имеет значительную толщину —
                 до 70км. Она сложена осадочными породами, ниже идут
@@ -102,7 +104,7 @@ export const IndividualLessonPage = (props: IIndividualLessonProps) => {
                 src="https://sun9-1.userapi.com/impg/LcMQXxUOLnaOAmczSqJMoMCDHugFaszCDoipew/OeLBNl5ykPs.jpg?size=604x780&quality=96&sign=d6917c12dc1521d41564dea92878bd50&type=album"
                 alt="image"
               />
-              <span>Рисунок 2 — Пангея</span>
+              <span className="text-desc">Рисунок 2 — Пангея</span>
               <div className="w-full text-center flex flex-col gap-2 items-center">
                 <h1 className="head-text text-center">
                   Сделай дело и гуляй смело!
@@ -112,7 +114,11 @@ export const IndividualLessonPage = (props: IIndividualLessonProps) => {
                   <p>остальных иполучи дополнительные баллы.</p>
                 </div>
 
-                <Button className="w-fit mt-4" variant="primary">
+                <Button
+                  onClick={() => setTab('test')}
+                  className="w-fit mt-4"
+                  variant="primary"
+                >
                   Перейти к тесту
                 </Button>
               </div>
