@@ -4,6 +4,7 @@ import { LessonContainer } from '@components/shared/lesson-container/lesson-cont
 import { Button } from '@components/ui/button';
 import { Tabs } from '@radix-ui/react-tabs';
 import { TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs';
+import { LessonTest } from '@components/pages/individual-lesson/lesson-test';
 
 type TabKeysType = 'article' | 'test';
 
@@ -22,10 +23,12 @@ export const IndividualLessonPage = (props: IIndividualLessonProps) => {
     <div className="flex flex-col w-full gap-4">
       <h1 className="head-text text-center">{`Урок №${id}.`}</h1>
       <Tabs defaultValue="article">
-        <TabsList>
-          <TabsTrigger value="article">Теория</TabsTrigger>
-          <TabsTrigger value="test">Тест</TabsTrigger>
-        </TabsList>
+        <div className="w-full flex justify-center">
+          <TabsList>
+            <TabsTrigger value="article">Теория</TabsTrigger>
+            <TabsTrigger value="test">Тест</TabsTrigger>
+          </TabsList>
+        </div>
 
         <TabsContent value="article">
           <LessonContainer>
@@ -116,7 +119,9 @@ export const IndividualLessonPage = (props: IIndividualLessonProps) => {
             </div>
           </LessonContainer>
         </TabsContent>
-        <TabsContent value="test"></TabsContent>
+        <TabsContent value="test">
+          <LessonTest />
+        </TabsContent>
       </Tabs>
     </div>
   );
