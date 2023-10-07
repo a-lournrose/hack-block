@@ -8,6 +8,8 @@ import { AuthContext } from '@app/providers/auth';
 import { EducationContext } from '@app/providers/education/education-context';
 import { PreloaderContext } from '@app/providers/preloader';
 import { EmptyContent } from '@components/shared/empty-content/empty-content';
+import ProgressCard from '@components/modules/progress-card/progress-card';
+import { CreateEditCourseDialog } from '@components/dialogs/course/create-edit-course-dialog';
 
 export const ThemePage = () => {
   const educationContext = useContext(EducationContext);
@@ -30,10 +32,14 @@ export const ThemePage = () => {
     <>
       <CreateEditThemeDialog
         mode="edit"
+        defaultValue={educationContext.themes.find(
+          item => item.id == Number(id)
+        )}
         isOpen={isOpenEditThemeDialog}
         onOpenChange={setIsOpenEditThemeDialog}
         id={Number(id)}
       />
+      <ProgressCard value={0.55} once lessons={[true, true, true, false]} />
       <div className="w-full flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 justify-between">
           <Button

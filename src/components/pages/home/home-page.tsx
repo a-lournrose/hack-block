@@ -46,8 +46,6 @@ export const HomePage = () => {
         onOpenChange={setIsOpenCreateCourseDialog}
         mode="create"
       />
-      <ProgressCard value={0.78} />
-      <ProgressCard value={0.55} once lessons={[true, true, true, false]} />
       <div className="w-full flex items-center justify-between">
         <h1 className="head-text text-left">Мои программы обучения</h1>
         {authContext.role === 'Teacher' && (
@@ -82,22 +80,22 @@ export const HomePage = () => {
         {/*  />*/}
         {/*)}*/}
         {/*проверить роль юзера*/}
-        <h1 className="head-text text-left">Все программы обучения</h1>
-        <section className="mt-9 flex flex-row flex-wrap gap-5 md:gap-10">
-          {educationContext.coursers?.length ? (
-            educationContext.coursers.map(item => (
-              <EducationEntityCard
-                type="course"
-                title={item.title ?? ''}
-                description={item.description ?? ''}
-                id={item.id ?? 1}
-                key={item.id}
-              />
-            ))
-          ) : (
-            <EmptyContent />
-          )}
-        </section>
+      </section>
+      <h1 className="head-text text-left mt-5">Все программы обучения</h1>
+      <section className="mt-9 flex flex-row flex-wrap gap-5 md:gap-10">
+        {educationContext.coursers?.length ? (
+          educationContext.coursers.map(item => (
+            <EducationEntityCard
+              type="course"
+              title={item.title ?? ''}
+              description={item.description ?? ''}
+              id={item.id ?? 1}
+              key={item.id}
+            />
+          ))
+        ) : (
+          <EmptyContent />
+        )}
       </section>
     </>
   );

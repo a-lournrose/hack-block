@@ -21,8 +21,8 @@ export const ProtectedRoute = (
     (props.isPrivate && !authContext.isAuth) ||
     (props.requiredRole && authContext.role == props.requiredRole);
 
-  // if (isUnavailable && !preloader.isVisible)
-  //   return <Navigate to={RoutePaths[RouteKeys.AUTH]} />;
+  if (isUnavailable && !preloader.isVisible)
+    return <Navigate to={RoutePaths[RouteKeys.AUTH]} />;
 
   return <>{props.children}</>;
 };

@@ -13,6 +13,7 @@ import { AuthContext } from '@app/providers/auth';
 import { EducationContext } from '@app/providers/education/education-context';
 import { PreloaderContext } from '@app/providers/preloader';
 import { EmptyContent } from '@components/shared/empty-content/empty-content';
+import ProgressCard from '@components/modules/progress-card/progress-card';
 
 export const CoursePage = () => {
   /*const { isLoading, data } = useQuery({
@@ -49,9 +50,13 @@ export const CoursePage = () => {
       <CreateEditCourseDialog
         mode="edit"
         id={Number(id)}
+        defaultValue={educationContext.coursers.find(
+          item => item.id == Number(id)
+        )}
         isOpen={isOpenEditCourseDialog}
         onOpenChange={setIsOpenEditCourseDialog}
       />
+      <ProgressCard value={0.78} />
       <div className="w-full flex items-center justify-between gap-2">
         <div className="flex gap-2 items-center">
           <Button
