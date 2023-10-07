@@ -4,16 +4,21 @@ import { Progress } from '@components/ui/progress';
 
 interface IFlippingContainer {
   contents: React.ReactNode[];
+  onFinish: () => void;
 }
 
-const FlippingContainer:FC<IFlippingContainer> = ({contents}) => {
+const FlippingContainer:FC<IFlippingContainer> = ({contents, onFinish}) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const prev = () => {
     if(currentIndex > 0) setCurrentIndex(prev => prev-1);
   }
   const next = () => {
-    if(currentIndex < contents.length-1) setCurrentIndex(prev => prev+1);
+    if(currentIndex < contents.length-1) {
+      setCurrentIndex(prev => prev+1);
+    } else {
+      onFinish();
+    }
   }
 
   return (
@@ -25,7 +30,7 @@ const FlippingContainer:FC<IFlippingContainer> = ({contents}) => {
       <div className='my-6'>{contents[currentIndex]}</div>
       <div className='w-full flex items-center space-x-3 justify-end'>
         <Button variant='outline' onClick={prev}>Назад</Button>
-        <Button variant='primary' onClick={next}>Вперед</Button>
+        <Button variant='primary' onClick={next}>{(currentIndex === contents.length-1) ? 'Закончить' : 'Далее'}</Button>
       </div>
     </div>
   );
