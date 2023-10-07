@@ -12,6 +12,7 @@ import GradeIdPage from '@components/pages/grade/grade-id-page';
 import { MapPage } from '@/components/pages/map-page';
 import { IndividualLessonPage } from '@components/pages/individual-lesson/individual-lesson-page';
 import { DrawPage } from '@components/pages/draw/draw-page';
+import { LessonPage } from '@components/pages/lesson';
 
 export type RoutePropsType = RouteProps & {
   isPrivate: boolean;

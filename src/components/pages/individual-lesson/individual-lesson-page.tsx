@@ -21,11 +21,12 @@ export const IndividualLessonPage = (props: IIndividualLessonProps) => {
   return (
     <div className="flex flex-col w-full gap-4">
       <h1 className="head-text text-center">{`Урок №${id}.`}</h1>
-      <TabsList>
-        <TabsTrigger value="article">Теория</TabsTrigger>
-        <TabsTrigger value="test">Тест</TabsTrigger>
-      </TabsList>
       <Tabs defaultValue="article">
+        <TabsList>
+          <TabsTrigger value="article">Теория</TabsTrigger>
+          <TabsTrigger value="test">Тест</TabsTrigger>
+        </TabsList>
+
         <TabsContent value="article">
           <LessonContainer>
             <div className="flex flex-col gap-y-6 px-20">
