@@ -18,6 +18,7 @@ import VectorLayer from 'ol/layer/Vector';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import VectorSource from 'ol/source/Vector';
+import 'ol/ol.css'
 
 export const MapPage = () => {
   const [map, setMap] = useState(undefined);
