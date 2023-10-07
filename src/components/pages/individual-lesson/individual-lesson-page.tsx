@@ -4,6 +4,7 @@ import { LessonContainer } from '@components/shared/lesson-container/lesson-cont
 import { Button } from '@components/ui/button';
 import { Tabs } from '@radix-ui/react-tabs';
 import { TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs';
+import TestItemCard from '@components/modules/test-item-card/test-item-card';
 
 type TabKeysType = 'article' | 'test';
 
@@ -116,7 +117,9 @@ export const IndividualLessonPage = (props: IIndividualLessonProps) => {
             </div>
           </LessonContainer>
         </TabsContent>
-        <TabsContent value="test"></TabsContent>
+        <TabsContent value="test">
+          <TestItemCard/>
+        </TabsContent>
       </Tabs>
     </div>
   );
