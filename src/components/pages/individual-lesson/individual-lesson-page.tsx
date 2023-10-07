@@ -5,7 +5,7 @@ import { Button } from '@components/ui/button';
 import { Tabs } from '@radix-ui/react-tabs';
 import { TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs';
 import { LessonTest } from '@components/pages/individual-lesson/lesson-test';
-import { questions, testQuestions } from '@components/pages/individual-lesson/mock/test';
+import { questions } from '@components/pages/individual-lesson/mock/test';
 
 type TabKeysType = 'article' | 'test';
 
@@ -13,10 +13,6 @@ interface IIndividualLessonProps {}
 
 export const IndividualLessonPage = (props: IIndividualLessonProps) => {
   const { id } = useParams<{ id: string }>();
-
-  const onTestFinish = () => {
-    console.log('ТЕСТ ЗАКОНЧЕН')
-  }
 
   // <ExaminationConstructor
   // //defaultValue={{}}
