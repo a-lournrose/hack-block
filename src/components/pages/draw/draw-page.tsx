@@ -19,6 +19,7 @@ import VectorLayer from 'ol/layer/Vector';
 //@ts-ignore
 import VectorSource from 'ol/source/Vector';
 import { Draw } from 'ol/interaction';
+import 'ol/ol.css'
 
 export const DrawPage = () => {
   const [map, setMap] = useState(undefined);

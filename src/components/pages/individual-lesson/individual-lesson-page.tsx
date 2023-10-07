@@ -5,6 +5,7 @@ import { Button } from '@components/ui/button';
 import { Tabs } from '@radix-ui/react-tabs';
 import { TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs';
 import { LessonTest } from '@components/pages/individual-lesson/lesson-test';
+import { questions } from '@components/pages/individual-lesson/mock/test';
 
 type TabKeysType = 'article' | 'test';
 
@@ -110,7 +111,7 @@ export const IndividualLessonPage = (props: IIndividualLessonProps) => {
                   Сделай дело и гуляй смело!
                 </h1>
                 <div>
-                  <p className="w-max-[50%]">Выполни тест по теории раньше</p>
+                  <p className="w-max-[50%]">Выполни тест по теории раньше</p>
                   <p>остальных иполучи дополнительные баллы.</p>
                 </div>
 
@@ -126,7 +127,7 @@ export const IndividualLessonPage = (props: IIndividualLessonProps) => {
           </LessonContainer>
         </TabsContent>
         <TabsContent value="test">
-          <LessonTest />
+          <LessonTest questions={questions}/>
         </TabsContent>
       </Tabs>
     </div>
